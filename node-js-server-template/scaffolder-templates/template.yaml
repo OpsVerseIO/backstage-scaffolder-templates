@@ -6,7 +6,7 @@ metadata:
   description: Create a simple RESTful microservice using Node.js (express)
   tags:
     - recommended
-    - node.js
+    - nodejs
     - REST
     - express
 spec:
