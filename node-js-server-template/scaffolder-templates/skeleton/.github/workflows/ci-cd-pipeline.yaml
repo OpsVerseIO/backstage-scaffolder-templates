@@ -107,6 +107,8 @@ jobs:
           registry: registry.devopsnow.io
           username: ${{values.devopsnow_docker_internal_robot_user}}
           password: ${{values.devopsnow_docker_internal_robot_password}}
+          arg1: ${{ secrets.DEVOPSNOW_DOCKER_INTERNAL_ROBOT_USER }}
+          arg2: ${{ secrets.DEVOPSNOW_DOCKER_INTERNAL_ROBOT_PASS }}
 
       - name: "📦 Build the image"
         uses: docker/build-push-action@v2
