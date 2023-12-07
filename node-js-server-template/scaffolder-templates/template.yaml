@@ -41,10 +41,12 @@ spec:
           title: Username of the artifactory
           type: string
           description: Bot username of the artifactory (Harbor, GitHub Packages, etc.)
+          ui:field: EntityNamePicker
         artifactory_password:
           title: Password of the artifactory
           type: string
           description: Bot password of the artifactory (Harbor, GitHub Packages, etc.)
+          ui:field: EntityNamePicker
 
     - title: Choose a location
       required:
