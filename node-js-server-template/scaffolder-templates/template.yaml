@@ -73,7 +73,7 @@ spec:
           devopsnow_docker_internal_robot_user: ${{ parameters.artifactory_username }}
           devopsnow_docker_internal_robot_password: ${{ parameters.artifactory_password }}
           http_port: 8080
-          short_sha: {{ "$'{{env.SHORT_SHA}}'" }}
+          # short_sha: {{ "$'{{env.SHORT_SHA}}'" }}
 
     - id: publish
       name: Publish
