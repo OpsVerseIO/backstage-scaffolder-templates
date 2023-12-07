@@ -17,8 +17,6 @@ spec:
       required:
         - component_id
         - owner
-        - devopsnow_docker_internal_robot_user
-        - devopsnow_docker_internal_robot_password
       properties:
         component_id:
           title: Name
@@ -37,6 +35,13 @@ spec:
           ui:options:
             allowedKinds:
               - Group
+
+    - title: Choose a location
+      required:
+        - repoUrl
+        - devopsnow_docker_internal_robot_user
+        - devopsnow_docker_internal_robot_password
+      properties:
         artifactory_username:
           title: Username of the artifactory
           type: string
@@ -47,11 +52,6 @@ spec:
           type: string
           description: Bot password of the artifactory (Harbor, GitHub Packages, etc.)
           ui:field: EntityNamePicker
-
-    - title: Choose a location
-      required:
-        - repoUrl
-      properties:
         repoUrl:
           title: Repository Location
           type: string
