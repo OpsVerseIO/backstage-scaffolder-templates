@@ -2,8 +2,8 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: node-js-server-template
-  title: Node.js REST Service with out of the box CI-CD pipe line
-  description: Create a simple RESTful microservice using Node.js (express) with CI-CD enabled using GitHub actions
+  title: Node.js REST Service with out of the box CI/CD pipeline
+  description: Create a RESTful microservice using Node.js (express) with out of the box CI/CD using GitHub actions
   tags:
     - recommended
     - nodejs
