@@ -117,7 +117,7 @@ jobs:
           tags: "registry.devopsnow.io/internal/sample:${{ env.SHORT_SHA }}"
 
       - name: "📂 Push the image to artifactory"
-        run: docker push "registry.devopsnow.io/internal/sample:${{ env.SHORT_SHA }}"
+        run: docker push "registry.devopsnow.io/internal/sample:${{ values.short_sha }}"
 
   release-stage:
     environment:
