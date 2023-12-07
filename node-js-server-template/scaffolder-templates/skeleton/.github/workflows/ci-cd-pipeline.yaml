@@ -96,6 +96,7 @@ jobs:
       - name: "🔧 Add dynamic envs"
         run: |
           echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
+          echo "${{ env.SHORT_SHA }}"
 
       - name: "☁️ checkout repository"
         uses: actions/checkout@v2
@@ -111,10 +112,10 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          tags: "registry.devopsnow.io/internal/${{values.component_id}}:${{ env.SHORT_SHA }}"
+          tags: "registry.devopsnow.io/internal/sample:${{ env.SHORT_SHA }}"
 
       - name: "📂 Push the image to artifactory"
-        run: docker push "registry.devopsnow.io/internal/${{values.component_id}}:${{ env.SHORT_SHA }}"
+        run: docker push "registry.devopsnow.io/internal/sample:${{ env.SHORT_SHA }}"
 
   release-stage:
     environment:
