@@ -39,8 +39,6 @@ spec:
     - title: Choose a location
       required:
         - repoUrl
-        - devopsnow_docker_internal_robot_user
-        - devopsnow_docker_internal_robot_password
       properties:
         artifactory_username:
           title: Username of the artifactory
