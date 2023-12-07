@@ -17,6 +17,8 @@ spec:
       required:
         - component_id
         - owner
+        - devopsnow_docker_internal_robot_user
+        - devopsnow_docker_internal_robot_password
       properties:
         component_id:
           title: Name
@@ -35,6 +37,15 @@ spec:
           ui:options:
             allowedKinds:
               - Group
+        artifactory_username:
+          title: Username of the artifactory
+          type: string
+          description: Bot username of the artifactory (Harbor, GitHub Packages, etc.)
+        artifactory_password:
+          title: Password of the artifactory
+          type: string
+          description: Bot password of the artifactory (Harbor, GitHub Packages, etc.)
+
     - title: Choose a location
       required:
         - repoUrl
@@ -61,6 +72,8 @@ spec:
           artifact_id: ${{ parameters.component_id }}
           owner: ${{ parameters.owner }}
           destination: ${{ parameters.repoUrl | parseRepoUrl }}
+          devopsnow_docker_internal_robot_user: ${{ parameters.artifactory_username }}
+          devopsnow_docker_internal_robot_password: ${{ parameters.artifactory_password }}
           http_port: 8080
 
     - id: publish

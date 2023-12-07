@@ -104,17 +104,17 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: registry.devopsnow.io
-          username: ${{ secrets.DEVOPSNOW_DOCKER_INTERNAL_ROBOT_USER }}
-          password: ${{ secrets.DEVOPSNOW_DOCKER_INTERNAL_ROBOT_PASS }}
+          username: ${{values.devopsnow_docker_internal_robot_user}}
+          password: ${{values.devopsnow_docker_internal_robot_password}}
 
       - name: "📦 Build the image"
         uses: docker/build-push-action@v2
         with:
           context: .
-          tags: "registry.devopsnow.io/internal/node-js-server:${{ env.SHORT_SHA }}"
+          tags: "registry.devopsnow.io/internal/${{values.component_id}}:${{ env.SHORT_SHA }}"
 
       - name: "📂 Push the image to artifactory"
-        run: docker push "registry.devopsnow.io/internal/node-js-server:${{ env.SHORT_SHA }}"
+        run: docker push "registry.devopsnow.io/internal/${{values.component_id}}:${{ env.SHORT_SHA }}"
 
   release-stage:
     environment:
