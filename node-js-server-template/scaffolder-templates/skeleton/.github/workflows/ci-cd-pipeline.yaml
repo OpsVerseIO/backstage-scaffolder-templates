@@ -232,8 +232,6 @@ jobs:
       - lint
       - test
       - opa
-      - opa-code-coverage
-      - opa-sonarqube
     steps:
       - name: "☁️ Checkout repository"
         uses: actions/checkout@v4
