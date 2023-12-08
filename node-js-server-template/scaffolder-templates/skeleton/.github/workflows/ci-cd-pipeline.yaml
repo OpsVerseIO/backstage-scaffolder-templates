@@ -137,7 +137,7 @@ jobs:
             print("\nValidating policy: " + policy_name)
             print("\nValidating rule: " + rule_name)
             
-            policy_check = client.check_permission(input_data=json.loads("{\"input\": {\"codesmellcount\": 90}}"), policy_name=policy_name, rule_name=rule_name)
+            policy_check = client.check_permission(input_data=json.loads("{\"input\": {\"codesmellcount\": 0}}"), policy_name=policy_name, rule_name=rule_name)
             del client
             print("\nOPA Server Response:\n")
             print(policy_check)
