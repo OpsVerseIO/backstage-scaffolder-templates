@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ${{values.artifact_id}}-service
+spec:
+  type: ClusterIP
+  selector:
+    app.kubernetes.io/name: ${{values.artifact_id}}-deployment
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8081
